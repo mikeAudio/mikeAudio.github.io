@@ -63,7 +63,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 body {
   margin: 0;
   font-family: "Quicksand", sans-serif;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -11625,16 +11625,19 @@ body {
   }
 }
 
-/* Conatct section */
+/* Contact section */
 .contact-section {
-  padding-top: 120px;
-  z-index: 990;
   position: relative;
   text-align: center;
   color: #fff;
   background-image: url(../imgs/footer.jpg);
   background-size: cover;
   background-position: bottom;
+}
+
+.contact-information {
+  position: relative;
+  z-index: 1000; /* Set a higher z-index value for the contact information */
 }
 
 .contact-section .overlay {
@@ -11645,7 +11648,9 @@ body {
   width: 100%;
   background-image: -webkit-radial-gradient(48% 65%, 200% 130%, rgba(33, 37, 41, 0.5), rgba(33, 37, 41, 0.6), rgba(33, 37, 41, 0.7), rgba(33, 37, 41, 0.87), rgba(33, 37, 41, 0.99), #212529 55%, #212529 200%);
   background-image: radial-gradient(200% 130% at 48% 65%, rgba(33, 37, 41, 0.5), rgba(33, 37, 41, 0.6), rgba(33, 37, 41, 0.7), rgba(33, 37, 41, 0.87), rgba(33, 37, 41, 0.99), #212529 55%, #212529 200%);
+  z-index: 999; /* Set a lower z-index value for the overlay */
 }
+
 
 body.light-theme {
   background-color: #fff !important;
