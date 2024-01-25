@@ -11802,11 +11802,13 @@ body.dark-theme {
 
 .center-container {
   text-align: center;
-  margin: 0 0px;
-  left: 0;
-  right: 0;
   position: relative;
   overflow: hidden; /* Hide overflow content */
+}
+
+.image-container {
+  width: 320px;
+  height: 300px;
 }
 
 img {
@@ -11818,6 +11820,7 @@ img {
 audio {
   display: block;
   margin-top: 0;
+  transform: translateX(10px);
 }
 
 .social-links {

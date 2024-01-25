@@ -145,7 +145,9 @@
 
                 <!-- 1. Beifang -->
                 <p>Beifang - Intro</p>
-                <img src="assets/imgs/beifang.jpg" alt="Album Cover">
+                <div class="image-container">
+                    <img src="assets/imgs/beifang.jpg" alt="Album Cover">
+                </div>
                 <audio controls>
                     <source src="assets/music/Intro.mp3" type="audio/mp3">
                     Your browser does not support the audio file format.
@@ -160,7 +162,9 @@
             <div class="center-container">
                 <!-- 2. Inmate -->
                 <p>Inmate - FOAD</p>
-                <img src="assets/imgs/inmate.jpg" alt="Album Cover">
+                <div class="image-container">
+                    <img src="assets/imgs/inmate.jpg" alt="Album Cover">
+                </div>
                 <audio controls>
                     <source src="assets/music/Inmate - Foad.mp3" type="audio/mp3">
                     Your browser does not support the audio file format.
@@ -175,7 +179,9 @@
             <div class="center-container">
                 <!-- 3. Skinny Kurt -->
                 <p>Skinny Kurt - Pardon!</p>
-                <img src="assets/imgs/skinny_kurt.jpg" alt="Album Cover">
+                <div class="image-container">
+                    <img src="assets/imgs/skinny_kurt.jpg" alt="Album Cover">
+                </div>
                 <audio controls>
                     <source src="assets/music/Skinny Kurt - Pardon.mp3" type="audio/mp3">
                     Your browser does not support the audio file format.
@@ -358,7 +364,8 @@
         let currentSlide = 1;
 
         const totalSlides = document.querySelectorAll('.center-container').length;
-        const slideWidth = 120; // Assuming each slide takes 100% width
+        const slideWidth = 100; // Assuming each slide takes 100% width
+        const margin = 10; // Set the desired margin value
 
         function showSlide() {
 
