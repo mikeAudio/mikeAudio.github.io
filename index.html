@@ -383,9 +383,17 @@
                 }
 
                 const slidePosition = step * slideWidth;
+                const transitionDuration = 500; // in milliseconds
+
+                slide.style.transition = `transform ${transitionDuration}ms ease-in-out`;
                 slide.style.transform = `translateX(${slidePosition}%)`;
-            });
-        }
+
+                // You may need to reset the transition property after the animation completes
+                setTimeout(() => {
+                slide.style.transition = '';
+                }, transitionDuration);
+                });
+            }
 
 
         function changeSlide(n) {
