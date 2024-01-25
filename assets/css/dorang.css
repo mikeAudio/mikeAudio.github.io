@@ -11787,3 +11787,88 @@ body.dark-theme {
   background: #212529;
 }
 
+
+
+.sets-container {
+  display: flex;
+  justify-content: center; /* Center items along the vertical axis */
+  position: relative; /* Add relative positioning for absolute positioning of buttons */
+}
+
+.slides-container {
+  display: flex; /* Ensure the slides are in a flex container */
+  overflow: hidden;
+}
+
+.center-container {
+  text-align: center;
+  margin: 0 0px;
+  left: 0;
+  right: 0;
+  position: relative;
+  overflow: hidden; /* Hide overflow content */
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 0;
+}
+
+audio {
+  display: block;
+  margin-top: 0;
+}
+
+.social-links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 16px; /* Adjust the font size for social links */
+  margin-top: 9px; /* Adjust the vertical margin as needed */
+}
+
+.social-links a {
+  text-decoration: none;
+  color: wheat ; /* Adjust link color as needed */
+}
+
+.social-links a:hover {
+  text-decoration: underline; /* Add underline on hover if desired */
+}
+
+#nextBtn {
+  position: absolute; /* Position the buttons absolutely */
+  top: 50%; /* Move the buttons to the vertical center */
+  right: 0; /* Position the next button on the right */
+  transform: translateY(-50%); /* Adjust to perfectly center the buttons */
+  width: 80px;
+  height: 80px;
+  margin-right: 100px;
+  padding: 0; /* Remove any default padding */
+  border: none; /* Remove border for a cleaner look */
+  cursor: pointer; /* Add cursor pointer for user interaction */
+  background: none; /* Remove any default background */
+}
+
+#prevBtn {
+  position: absolute; /* Position the buttons absolutely */
+  top: 50%; /* Move the buttons to the vertical center */
+  left: 0; /* Position the previous button on the left */
+  transform: translateY(-50%); /* Adjust to perfectly center the buttons */
+  width: 80px;
+  height: 80px;
+  margin-left: 100px;
+  padding: 0; /* Remove any default padding */
+  border: none; /* Remove border for a cleaner look */
+  cursor: pointer; /* Add cursor pointer for user interaction */
+  background: none; /* Remove any default background */
+}
+
+#nextBtn img, #prevBtn img {
+  display: block; /* Make sure the image is treated as a block element */
+  width: 50%; /* Make the image fill the entire button */
+  height: 50%; /* Make the image fill the entire button */
+}
+

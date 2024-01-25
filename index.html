@@ -13,8 +13,10 @@
     <!-- Bootstrap + Dorang main styles -->
     <link rel="stylesheet" href="assets/css/dorang.css">
 
-
-
+    <!-- Slideshow -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Cover with Audio Track</title>
 
 </head>
 
@@ -25,7 +27,7 @@
         <ul class="nav-navbar container">
             <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="#angebote" class="nav-link">Angebote</a></li>
-            <li class="nav-item"><a href="#angebote" class="nav-link">Referenzen</a></li>
+            <li class="nav-item"><a href="#references" class="nav-link">Referenzen</a></li>
 
             <li class="nav-item">
                 <a href="#" class="nav-link" onclick="openGoogleMaps()">
@@ -121,14 +123,78 @@
                     <div class="card-body"></div>
                 </a>
                 <div class="des">
-                    <h1 class="title">Live Sessions</h1>
-                    <p>Jede Produktion ist individuell und und alle Musizierende haben ihre besonderen Wünsche.
+                    <h1 class="title">Pricing</h1>
+                    <p>Jede Produktion ist individuell und und alle Musizierenden haben ihre besonderen Wünsche.
                         Da wir besonders junge Menschen ermutigen wollen, den Weg
                         zur ersten Aufnahme zu gehen, passen wir uns den finanziellen Möglichkeiten unserer Klient*innen an.</p>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <!-- Referenzen-->
+
+    <div class="sets-container">
+        <button id="prevBtn" onclick="changeSlide(1)">
+            <img src="assets/imgs/prev.png" alt="Previous Slide">
+        </button>
+    
+        <div class="slides-container">
+            <div class="center-container">
+
+                <!-- 1. Beifang -->
+                <p>Beifang - Intro</p>
+                <img src="assets/imgs/beifang.jpg" alt="Album Cover">
+                <audio controls>
+                    <source src="assets/music/Intro.mp3" type="audio/mp3">
+                    Your browser does not support the audio file format.
+                </audio>
+                </br>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/beifang/" target="_blank">Instagram |</a>
+                    <a href="https://open.spotify.com/artist/beifang" target="_blank">Spotify</a>
+                </div>
+            </div>
+    
+            <div class="center-container">
+                <!-- 2. Inmate -->
+                <p>Inmate - FOAD</p>
+                <img src="assets/imgs/inmate.jpg" alt="Album Cover">
+                <audio controls>
+                    <source src="assets/music/Inmate - Foad.mp3" type="audio/mp3">
+                    Your browser does not support the audio file format.
+                </audio>
+                </br>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/inmate/" target="_blank">Instagram |</a>
+                    <a href="https://open.spotify.com/artist/inmate" target="_blank">Spotify</a>
+                </div>
+            </div>
+    
+            <div class="center-container">
+                <!-- 3. Skinny Kurt -->
+                <p>Skinny Kurt - Pardon!</p>
+                <img src="assets/imgs/skinny_kurt.jpg" alt="Album Cover">
+                <audio controls>
+                    <source src="assets/music/Skinny Kurt - Pardon.mp3" type="audio/mp3">
+                    Your browser does not support the audio file format.
+                </audio>
+                </br>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/skinnykurt.official/" target="_blank">Instagram |</a>
+                    <a href="https://open.spotify.com/artist/skinnykurt" target="_blank">Spotify</a>
+                </div>
+            </div>
+        </div>
+    
+        <button id="nextBtn" onclick="changeSlide(-1)">
+            <img src="assets/imgs/next.png" alt="Next Slide">
+        </button>
+    </div>
+    
+    
+    <!-- Referenzen Ende-->
 
 
     <!-- Ueber uns -->
@@ -148,7 +214,7 @@
                 Eine geräumige, selbstgebaute Drumkabine, ergänzt mit hervorangenden DIY-Absorbern und teils selbstgebauten oder gebraucht gekauften Möbeln und vielen weitere kreative Ideen, schmücken unsere Räumlichkeiten und verwandeln sie in einen gemütlichen Ort
                 für professionelles Musik Recording.
                 
-                Ob Solo-Aufnahmen oder Live-Sessions - auf 90 Quadratmetern gibt es für bis zu 8 Musizierende, 
+                Ob Solo-Aufnahmen oder Live-Sessions - auf 90 Quadratmetern gibt es für bis zu 8 Musizierende 
                 hier die Möglichkeit, sich musikalisch komplett auszutoben.
             </p>
         </div>
@@ -287,6 +353,51 @@
             // Open the URL in a new tab or window
             window.open(googleMapsUrl, "_blank");
         }
+
+
+        let currentSlide = 1;
+
+        const totalSlides = document.querySelectorAll('.center-container').length;
+        const slideWidth = 120; // Assuming each slide takes 100% width
+
+        function showSlide() {
+
+            const slides = document.querySelectorAll('.center-container');
+
+            slides.forEach((slide, index) => {
+                let position = index - currentSlide + 1;
+                let step     = position - index;
+
+                // Handle overflow and wrap around
+                if (index + step > totalSlides - 1) {
+                    step = -index;
+                } else if (index + step < 0) {
+                    step = totalSlides - 1;
+                }
+
+                const slidePosition = step * slideWidth;
+                slide.style.transform = `translateX(${slidePosition}%)`;
+            });
+        }
+
+
+        function changeSlide(n) {
+            currentSlide += n;
+
+            if (currentSlide > totalSlides - 1) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+
+            console.log(currentSlide)
+
+            showSlide();
+        }
+
+        // Initial display
+        showSlide();
+
     </script>
 
 </body>
