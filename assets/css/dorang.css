@@ -11809,18 +11809,16 @@ body.dark-theme {
 .image-container {
   width: 320px;
   height: 300px;
+  transform: translateX(-10px);
 }
 
 img {
-  width: 300px;
-  height: 300px;
-  margin-bottom: 0;
+  width: 94%;
 }
 
 audio {
   display: block;
   margin-top: 0;
-  transform: translateX(10px);
 }
 
 .social-links {
