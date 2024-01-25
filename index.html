@@ -31,14 +31,14 @@
 
             <li class="nav-item">
                 <a href="#" class="nav-link" onclick="openGoogleMaps()">
-                    <img src="assets/imgs/placeholder.svg" alt="Location">
+                    <img src="assets/imgs/Logo.jpg" alt="Location">
                 </a>
             </li>
             <li class="nav-item"><a href="#about" class="nav-link">Über Uns</a></li>
             <li class="nav-item"><a href="#contact" class="nav-link">Kontakt</a></li>
             <li class="nav-item">
                 <a href="index-en.html" class="nav-link">
-                    <img src="assets/imgs/english.jpg" alt="English" style="width: 30px; height: 30px;">
+                    <img src="assets/imgs/english.png" alt="English" style="width: 30px; height: 30px;">
                 </a>
             </li>
 
@@ -155,12 +155,12 @@
             <div class="center-container">
 
                 <!-- 1. Beifang -->
-                <p>Beifang - Intro</p>
+                <p>Beifang - Unbekannte Weite</p>
                 <div class="image-container">
                     <img src="assets/imgs/beifang.jpg" alt="Album Cover">
                 </div>
                 <audio controls>
-                    <source src="assets/music/Intro.mp3" type="audio/mp3">
+                    <source src="assets/music/Beifang - Unbekannte Weite.mp3" type="audio/mp3">
                     Your browser does not support the audio file format.
                 </audio>
                 </br>
@@ -384,8 +384,9 @@
             const slides = document.querySelectorAll('.center-container');
 
             slides.forEach((slide, index) => {
-                let position = index - currentSlide + 1;
-                let step     = position - index;
+                const position = index - currentSlide + 1;
+                let   step     = position - index;
+
 
                 // Handle overflow and wrap around
                 if (index + step > totalSlides - 1) {
@@ -401,7 +402,9 @@
                 slide.style.transform = `translateX(${slidePosition}%)`;
 
                 setTimeout(() => {
-                slide.style.transition = '';
+                    slides.forEach((slide) => {
+                        slide.style.transition = '';
+                    });
                 }, transitionDuration);
                 });
             }
