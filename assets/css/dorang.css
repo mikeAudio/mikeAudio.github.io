@@ -11874,5 +11874,10 @@ audio {
 }
 
 .des {
-  padding: 10px; /* Adjust the padding size as needed */
+  padding: 10px; /* Border in biography tests */
 }
+
+.background-image-referenzen {
+  background-image: url("../imgs/header.jpg");
+}
+
