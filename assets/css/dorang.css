@@ -7754,6 +7754,7 @@ button.bg-dark:focus {
   -webkit-align-items: center !important;
       -ms-flex-align: center !important;
           align-items: center !important;
+  max-width: 970px;
 }
 
 .align-items-baseline {
