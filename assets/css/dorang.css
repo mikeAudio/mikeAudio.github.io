@@ -11878,6 +11878,16 @@ audio {
 }
 
 .background-image-referenzen {
+  position: relative;
   background-image: url("../imgs/header.jpg");
+}
+
+.lens-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 70%);
 }
 
