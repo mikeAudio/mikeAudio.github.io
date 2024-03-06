@@ -11892,3 +11892,25 @@ audio {
   background: radial-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 70%);
 }
 
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image {
+  flex-basis: 10%;
+}
+
+.about-image img {
+  max-height: 400px; /* Set max height for the image */
+  width: auto; /* Ensure image maintains its aspect ratio */
+}
+
+.about-text {
+  font-size: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-height: 400px;
+  max-width: 500px;
+}
