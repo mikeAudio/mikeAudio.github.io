@@ -11788,8 +11788,6 @@ body.dark-theme {
   background: #212529;
 }
 
-
-
 .sets-container {
   display: flex;
   justify-content: center; /* Center items along the vertical axis */
@@ -11797,7 +11795,8 @@ body.dark-theme {
 }
 
 .slides-container {
-  display: flex; /* Ensure the slides are in a flex container */
+  display: flex; 
+  justify-content: center;
   overflow: hidden;
 }
 

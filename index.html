@@ -15,11 +15,6 @@
 
     <link rel="icon" type="image/x-icon" href="assets/imgs/favicon.ico">
 
-    <!-- Slideshow -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Album Cover with Audio Track</title>
-
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
@@ -140,7 +135,6 @@
     <div id="referenzen" class="background-image-referenzen">
         <div class="lens-overlay"></div>
         <br><br>
-
         <div class="container page-container">
             <div class="col-md-10 col-lg-10 m-auto">
                 <p>&nbsp;</p>
@@ -148,11 +142,6 @@
                 <p class="mb-5">Hier eine Auswahl an Songs, die wir bereits für Bands aufgenommen haben:</p>
             </div>
         </div>
-
-        <div class="sets-container">
-            <button id="prevBtn" onclick="changeSlide(1)">
-                <img src="assets/imgs/prev.png" alt="Previous Slide">
-            </button>
         
             <div class="slides-container">
                 <div class="center-container">
@@ -206,12 +195,9 @@
                     </div>
                 </div>
             </div>
-        
-            <button id="nextBtn" onclick="changeSlide(-1)">
-                <img src="assets/imgs/next.png" alt="Next Slide">
-            </button>
+            <br><br><br><br>
         </div>
-        <br><br><br><br>
+        
     </div>
     
     <!-- Referenzen Ende-->
@@ -404,61 +390,6 @@
             // Open the URL in a new tab or window
             window.open(googleMapsUrl, "_blank");
         }
-
-
-        let currentSlide = 1;
-
-        const totalSlides = document.querySelectorAll('.center-container').length;
-        const slideWidth = 100; // Assuming each slide takes 100% width
-        const margin = 10; // Set the desired margin value
-
-        function showSlide() {
-
-            const slides = document.querySelectorAll('.center-container');
-
-            slides.forEach((slide, index) => {
-                const position = index - currentSlide + 1;
-                let   step     = position - index;
-
-
-                // Handle overflow and wrap around
-                if (index + step > totalSlides - 1) {
-                    step = -index;
-                } else if (index + step < 0) {
-                    step = totalSlides - 1;
-                }
-
-                const slidePosition = step * slideWidth;
-                const transitionDuration = 500; // in milliseconds
-
-                slide.style.transition = `transform ${transitionDuration}ms ease-in-out`;
-                slide.style.transform = `translateX(${slidePosition}%)`;
-
-                setTimeout(() => {
-                    slides.forEach((slide) => {
-                        slide.style.transition = '';
-                    });
-                }, transitionDuration);
-                });
-            }
-
-
-        function changeSlide(n) {
-            currentSlide += n;
-
-            if (currentSlide > totalSlides - 1) {
-                currentSlide = 0;
-            } else if (currentSlide < 0) {
-                currentSlide = totalSlides - 1;
-            }
-
-            console.log(currentSlide)
-
-            showSlide();
-        }
-
-        // Initial display
-        showSlide();
 
     </script>
 
