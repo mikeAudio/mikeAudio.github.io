@@ -11795,7 +11795,7 @@ body.dark-theme {
 }
 
 .slides-container {
-  display: flex; 
+  display: flex;
   justify-content: center;
   overflow: hidden;
 }
@@ -11804,6 +11804,8 @@ body.dark-theme {
   text-align: center;
   position: relative;
   overflow: hidden; /* Hide overflow content */
+  padding-top: 20px; /* Add vertical padding */
+  padding-bottom: 20px; /* Add vertical padding */
 }
 
 .image-container {
@@ -11811,6 +11813,21 @@ body.dark-theme {
   height: 300px;
   transform: translateX(-10px);
 }
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .slides-container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align items */
+  }
+
+  .image-container {
+    width: 100%; /* Resize image container to fit the screen width */
+    max-width: 320px; /* Set maximum width for image container */
+    height: auto; /* Allow height to adjust according to aspect ratio */
+  }
+}
+
 
 img {
   width: 94%;
@@ -11837,40 +11854,6 @@ audio {
 
 .social-links a:hover {
   text-decoration: underline; /* Add underline on hover if desired */
-}
-
-#nextBtn {
-  position: absolute; /* Position the buttons absolutely */
-  top: 50%; /* Move the buttons to the vertical center */
-  right: 0; /* Position the next button on the right */
-  transform: translateY(-50%); /* Adjust to perfectly center the buttons */
-  width: 80px;
-  height: 80px;
-  margin-right: 100px;
-  padding: 0; /* Remove any default padding */
-  border: none; /* Remove border for a cleaner look */
-  cursor: pointer; /* Add cursor pointer for user interaction */
-  background: none; /* Remove any default background */
-}
-
-#prevBtn {
-  position: absolute; /* Position the buttons absolutely */
-  top: 50%; /* Move the buttons to the vertical center */
-  left: 0; /* Position the previous button on the left */
-  transform: translateY(-50%); /* Adjust to perfectly center the buttons */
-  width: 80px;
-  height: 80px;
-  margin-left: 100px;
-  padding: 0; /* Remove any default padding */
-  border: none; /* Remove border for a cleaner look */
-  cursor: pointer; /* Add cursor pointer for user interaction */
-  background: none; /* Remove any default background */
-}
-
-#nextBtn img, #prevBtn img {
-  display: block; /* Make sure the image is treated as a block element */
-  width: 50%; /* Make the image fill the entire button */
-  height: 50%; /* Make the image fill the entire button */
 }
 
 .des {
@@ -11903,7 +11886,8 @@ audio {
 
 .about-image img {
   max-height: 400px; /* Set max height for the image */
-  width: auto; /* Ensure image maintains its aspect ratio */
+  max-width: 100%; /* Ensure image does not exceed container width */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .about-text {
@@ -11913,3 +11897,22 @@ audio {
   max-height: 400px;
   max-width: 500px;
 }
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center-align text */
+  }
+
+  .about-image,
+  .about-text {
+    flex-basis: auto; /* Remove fixed width for smaller screens */
+    max-width: 100%; /* Ensure images and text occupy full width */
+  }
+
+  .about-image {
+    margin-bottom: 20px; /* Add spacing between image and text */
+  }
+}
+
