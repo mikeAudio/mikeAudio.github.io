@@ -11501,7 +11501,7 @@ a:hover {
   min-height: 600px;
   text-align: center;
   color: #fff;
-  background-image: url(../imgs/_photos/header.jpg);
+  background-image: url(../imgs/photos/header.jpg);
   background-size: cover;
   background-position: center;
   -webkit-transition: .2s;
@@ -11631,7 +11631,7 @@ body {
   position: relative;
   text-align: center;
   color: #fff;
-  background-image: url(../imgs/_photos/footer.jpg);
+  background-image: url(../imgs/photos/footer.jpg);
   background-size: cover;
   background-position: bottom;
 }
@@ -11862,7 +11862,7 @@ audio {
 
 .background-image-referenzen {
   position: relative;
-  background-image: url("../imgs/_photos/referenzen.jpg");
+  background-image: url("../imgs/photos/referenzen.jpg");
   background-size: cover;
 }
 
