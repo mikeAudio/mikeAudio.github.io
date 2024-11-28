@@ -46,7 +46,9 @@ header img {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    height: auto;
+    height: 100%; /* Force the image to fill the container's height */
+    object-fit: cover; /* Crop the sides to fill the container */
+    z-index: 0; /* Ensure it's behind the overlay and nav-bar */
 }
 
 header .overlay {
