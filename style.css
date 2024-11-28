@@ -36,7 +36,7 @@ a {
 
 /* Optional: Add hover effect to links */
 a:hover {
-    color: #FFD700; /* Change link color to gold when hovered */
+    color: #ffae22; /* Change link color to gold when hovered */
 }
 
 
@@ -104,20 +104,17 @@ header .overlay {
     background: none;
     border: none;
     color: white;
-    z-index: 2; /* Higher than .nav-bar */
+    z-index: 1000; /* Higher than the nav-bar (999) */
     cursor: pointer;
     transition: color 0.3s, transform 0.3s;
 }
 
 .menu-toggle:hover {
-    color: #FFD700; /* Match hover effect of nav-bar links */
+    color: #ffa710; /* Match hover effect of nav-bar links */
     transform: scale(1.1);
 }
 
-/* Rotate icon when menu is open */
-.nav-bar.open + .menu-toggle {
-    transform: rotate(90deg);
-}
+/*=============================================================================================================================*/
 
 /* Mobile Navigation Bar */
 .nav-bar {
@@ -126,17 +123,18 @@ header .overlay {
     left: -250px; /* Initially off-screen */
     width: 250px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 1); /* Opaque background to cover all */
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: left 0.3s ease;
     padding-top: 100px;
-    z-index: 1;
+    z-index: 999; /* Ensure it’s below the hamburger button */
 }
 
+/* Ensure the nav-bar slides in fully when open */
 .nav-bar.open {
-    left: 0; /* Slide in when open */
+    left: 0;
 }
 
 /* Navigation Links */
@@ -154,6 +152,14 @@ header .overlay {
 .nav-bar a:hover {
     color: #FFD700; /* Hover effect for links */
 }
+
+/* Header Text */
+.header-text {
+    position: relative; /* Ensure it doesn't interfere with nav-bar */
+    z-index: 1; /* Lower than .nav-bar */
+}
+
+
 
 /* Responsive Styling */
 @media (min-width: 768px) {
