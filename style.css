@@ -1,0 +1,306 @@
+html {
+    background: rgb(0, 0, 0);
+}
+
+@font-face {
+    font-family: 'Caviar';
+    src: url('assets/fonts/CaviarDreams.ttf');
+}
+
+/* Apply Caviar font to the entire body */
+body {
+    font-family: 'Caviar', sans-serif;
+    color: white;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove the default link styling (blue color and underline) */
+a {
+    color: white; /* Set link color to white */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Optional: Add hover effect to links */
+a:hover {
+    color: #FFD700; /* Change link color to gold when hovered */
+}
+
+/* Other general styles for header and content */
+header {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+header img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+/* Hamburger Button */
+.menu-toggle {
+    display: block;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+/* Mobile Navigation Bar */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially off-screen for mobile */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: left 0.3s ease;
+    padding-top: 100px;
+    z-index: 1;
+}
+
+.nav-bar.open {
+    left: 0; /* Slide in the navbar when open */
+}
+
+/* Navigation Links */
+.nav-bar a {
+    font-family: 'Caviar', sans-serif;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.nav-bar a:hover {
+    color: #FFD700; /* Hover effect for links */
+}
+
+/* Responsive Styling */
+@media (min-width: 768px) {
+    /* Desktop Layout */
+    .menu-toggle {
+        display: none; /* Hide the hamburger button */
+    }
+
+    .nav-bar {
+        position: absolute; /* Change to absolute to overlay on header */
+        top: 0; /* Position at the top of the header */
+        left: 0;
+        width: 100%; /* Full width across the header */
+        height: auto;
+        background-color: transparent; /* Keep the background transparent */
+        flex-direction: row; /* Arrange links horizontally */
+        justify-content: center;
+        padding: 10px 0; /* Add some padding for spacing */
+        z-index: 2; /* Ensure it’s above the header overlay */
+    }
+
+    .nav-bar a {
+        margin: 0 20px; /* Space between links */
+        font-size: 20px;
+        color: white; /* Ensure text color contrasts with background */
+        text-decoration: none; /* Optional: Remove underline from links */
+    }
+
+    .nav-bar.open {
+        left: 0; /* Override open behavior (do nothing on desktop) */
+    }
+}
+
+
+
+
+
+section {
+	padding-top: 30px;
+    width: 960px;
+    margin: auto;
+}
+
+.header_images {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 8%;
+    padding-top: 30px;
+    padding-bottom: 5px;
+}
+
+.section-divider {
+    border: none;
+    height: 1px; /* Thickness of the line */
+    background-color: rgb(42, 42, 42); /* Color of the line */
+    margin-top: 60px; /* Spacing above and below the line */
+    margin-bottom: 60px; /* Spacing above and below the line */
+    max-width: 77%;
+    
+}
+
+.music_samples {
+    max-width: 300px;
+}
+
+#live .header_images {
+    width: 12%;
+}
+
+#music table {
+    width: 100%;
+}
+
+#music td {
+    width: 50%;
+}
+
+#band .header_images {
+    width: 8%;
+}
+
+#contact .header_images {
+    width: 7%;
+}
+
+#bandphoto {
+    padding-top: 30px;
+    width: 100%;
+}
+
+#live td {
+    width: 25%;
+    border: 1px solid grey;
+    text-align: center;
+}
+
+#live td img {
+    width: 10%;
+}
+
+#live {
+	text-align: center;
+}
+
+#band td {
+	padding-top: 10px;
+    width: 25%;
+    text-align: center;  
+}
+
+#band td img {
+    padding-top: 0px; 
+    width: 100%;
+}
+
+section table {
+    width: 100%;
+}
+
+.socialmedia_logo {
+    padding-top: 30px;
+    padding-left: 85px;
+    padding-right: 85px;
+    max-width: 150px;
+    transition: filter 0.2s ease; 
+}
+
+.socialmedia_logo:hover {
+    filter: brightness(0.7); /* Darken the image on hover */
+}
+
+#band {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriert den gesamten Inhalt */
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.bwtocolor {
+    display: flex;
+    flex-direction: column;
+}
+
+.bwtocolor tr {
+    display: flex;
+    justify-content: center; /* Zentriert die Bilder in jeder Reihe */
+}
+
+.bwtocolor td {
+    text-align: center;
+    padding: 10px;
+}
+
+.bwtocolor tr:first-child {
+    justify-content: center; /* Zentriert die erste Reihe mit 3 Bildern */
+}
+
+.bwtocolor tr:last-child {
+    justify-content: center; /* Verteilung der 4 Bilder in der zweiten Reihe */
+}
+
+/* Style for the mailto link */
+a.mailto-link {
+    color: lightgrey; /* Initial color */
+    transition: filter 0.5s ease; /* Smooth transition */
+    text-decoration: none; /* Optional: Remove underline */
+}
+
+a.mailto-link:hover {
+    filter: brightness(0.7); /* Darken the text on hover */
+}
+
+footer {
+    padding-top: 50px;
+    width: 960px;
+    margin: auto;
+    font-family: 'Lemon', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
+    font-size: 200px;    
+    letter-spacing: 4px;
+    text-transform: uppercase;    
+}
+
+footer p, footer a {
+    font-size: 12px;
+}
+
+p {
+    margin-top: 0px;
+    padding-top: 0px;
+    text-align: center;
+}
+
