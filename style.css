@@ -168,7 +168,7 @@ header .overlay {
 
 
 
-/* Style for the mailto link */
+/* Contact Section*/
 a.mailto-link {
     color: lightgrey; /* Initial color */
     transition: filter 0.5s ease; /* Smooth transition */
@@ -179,10 +179,10 @@ a.mailto-link:hover {
     filter: brightness(0.7); /* Darken the text on hover */
 }
 
-
 .contact-section
 {
     font-size: 30px;
+    font-family: 'Caviar';
 }
 
 footer {
