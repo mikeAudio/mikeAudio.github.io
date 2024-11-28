@@ -166,6 +166,61 @@ header .overlay {
     }
 }
 
+/* Angebote Cards */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 2%; /* Adjust space between cards */
+  }
+  
+  .card {
+    text-align: center;
+    background-color: rgb(18, 18, 18);
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px; /* Adjust card width */
+  }
+  
+  .card img {
+    width: 100%;
+    height: 460px; /* Adjust the height as needed for the desired cropping effect */
+    object-fit: cover; /* Ensures the image is cropped to fit the specified height */
+    object-position: center; /* Centers the image within the cropped area */
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .card h1 {
+    margin: 5px 0; /* Adjust spacing between text lines */
+    font-size: 30px; /* Adjust text size */
+    color: #ffffff;
+  }
+  
+  .card p {
+    padding-top: 7px;
+    margin: 5px 0; /* Adjust spacing between text lines */
+    font-size: 20px; /* Adjust text size */
+    color: #ffffff;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .card-container {
+      flex-direction: column; /* Stack cards vertically */
+      gap: 20px; /* Adjust space between stacked cards */
+    }
+  
+    .card {
+      width: 100%; /* Make cards take full width on mobile */
+      max-width: 400px; /* Optional: Limit maximum width */
+      margin: 0 auto; /* Center align cards */
+    }
+
+    .card img {
+        height: 300px; 
+      }
+  }
+
 
 
 /* Contact Section*/
