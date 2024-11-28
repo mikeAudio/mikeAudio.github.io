@@ -57,7 +57,7 @@ header .overlay {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.55);
     z-index: 1;
 }
 
@@ -168,136 +168,6 @@ header .overlay {
 
 
 
-
-
-section {
-	padding-top: 30px;
-    width: 960px;
-    margin: auto;
-}
-
-.header_images {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 8%;
-    padding-top: 30px;
-    padding-bottom: 5px;
-}
-
-.section-divider {
-    border: none;
-    height: 1px; /* Thickness of the line */
-    background-color: rgb(42, 42, 42); /* Color of the line */
-    margin-top: 60px; /* Spacing above and below the line */
-    margin-bottom: 60px; /* Spacing above and below the line */
-    max-width: 77%;
-    
-}
-
-.music_samples {
-    max-width: 300px;
-}
-
-#live .header_images {
-    width: 12%;
-}
-
-#music table {
-    width: 100%;
-}
-
-#music td {
-    width: 50%;
-}
-
-#band .header_images {
-    width: 8%;
-}
-
-#contact .header_images {
-    width: 7%;
-}
-
-#bandphoto {
-    padding-top: 30px;
-    width: 100%;
-}
-
-#live td {
-    width: 25%;
-    border: 1px solid grey;
-    text-align: center;
-}
-
-#live td img {
-    width: 10%;
-}
-
-#live {
-	text-align: center;
-}
-
-#band td {
-	padding-top: 10px;
-    width: 25%;
-    text-align: center;  
-}
-
-#band td img {
-    padding-top: 0px; 
-    width: 100%;
-}
-
-section table {
-    width: 100%;
-}
-
-.socialmedia_logo {
-    padding-top: 30px;
-    padding-left: 85px;
-    padding-right: 85px;
-    max-width: 150px;
-    transition: filter 0.2s ease; 
-}
-
-.socialmedia_logo:hover {
-    filter: brightness(0.7); /* Darken the image on hover */
-}
-
-#band {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Zentriert den gesamten Inhalt */
-}
-
-table {
-    border-collapse: collapse;
-}
-
-.bwtocolor {
-    display: flex;
-    flex-direction: column;
-}
-
-.bwtocolor tr {
-    display: flex;
-    justify-content: center; /* Zentriert die Bilder in jeder Reihe */
-}
-
-.bwtocolor td {
-    text-align: center;
-    padding: 10px;
-}
-
-.bwtocolor tr:first-child {
-    justify-content: center; /* Zentriert die erste Reihe mit 3 Bildern */
-}
-
-.bwtocolor tr:last-child {
-    justify-content: center; /* Verteilung der 4 Bilder in der zweiten Reihe */
-}
-
 /* Style for the mailto link */
 a.mailto-link {
     color: lightgrey; /* Initial color */
@@ -307,6 +177,12 @@ a.mailto-link {
 
 a.mailto-link:hover {
     filter: brightness(0.7); /* Darken the text on hover */
+}
+
+
+.contact-section
+{
+    font-size: 30px;
 }
 
 footer {
