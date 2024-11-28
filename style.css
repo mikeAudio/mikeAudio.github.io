@@ -97,24 +97,33 @@ header .overlay {
 
 /* Hamburger Button */
 .menu-toggle {
-    display: block;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 40px;
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 2;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    z-index: 2; /* Higher than .nav-bar */
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
 }
 
-/*=============================================================================================================================*/
+.menu-toggle:hover {
+    color: #FFD700; /* Match hover effect of nav-bar links */
+    transform: scale(1.1);
+}
+
+/* Rotate icon when menu is open */
+.nav-bar.open + .menu-toggle {
+    transform: rotate(90deg);
+}
 
 /* Mobile Navigation Bar */
 .nav-bar {
     position: fixed;
     top: 0;
-    left: -250px; /* Initially off-screen for mobile */
+    left: -250px; /* Initially off-screen */
     width: 250px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
@@ -127,7 +136,7 @@ header .overlay {
 }
 
 .nav-bar.open {
-    left: 0; /* Slide in the navbar when open */
+    left: 0; /* Slide in when open */
 }
 
 /* Navigation Links */
