@@ -40,6 +40,26 @@ header {
     overflow: hidden;
 }
 
+.header-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    z-index: 2; /* Layer above image and overlay */
+    color: white; /* Ensure text is visible */
+    font-size: 3.8rem; /* Font size for main text */
+    font-weight: bold; /* Make the main text bold */
+    text-align: center; /* Center the text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Subtle shadow for readability */
+}
+
+.header-text .sub-text {
+    display: block; /* Ensure it's on a new line */
+    font-size: 2rem; /* Smaller font size for the second line */
+    font-weight: normal; /* Optional: lighter weight for contrast */
+}
+
+
 header img {
     position: absolute;
     top: 50%;
@@ -113,6 +133,11 @@ header .overlay {
 /* Responsive Styling */
 @media (min-width: 768px) {
     /* Desktop Layout */
+    header img {
+        height: 100%; /* Ensure full height */
+        object-fit: cover; /* Crop sides */
+    }
+
     .menu-toggle {
         display: none; /* Hide the hamburger button */
     }
