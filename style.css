@@ -21,6 +21,13 @@ body {
     box-sizing: border-box;
 }
 
+h1 {
+    font-size: 50px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 5px;
+}
+
 /* Remove the default link styling (blue color and underline) */
 a {
     color: white; /* Set link color to white */
