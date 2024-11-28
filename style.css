@@ -40,26 +40,6 @@ header {
     overflow: hidden;
 }
 
-.header-text {
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Perfect centering */
-    z-index: 2; /* Layer above image and overlay */
-    color: white; /* Ensure text is visible */
-    font-size: 3.8rem; /* Font size for main text */
-    font-weight: bold; /* Make the main text bold */
-    text-align: center; /* Center the text */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Subtle shadow for readability */
-}
-
-.header-text .sub-text {
-    display: block; /* Ensure it's on a new line */
-    font-size: 2rem; /* Smaller font size for the second line */
-    font-weight: normal; /* Optional: lighter weight for contrast */
-}
-
-
 header img {
     position: absolute;
     top: 50%;
@@ -77,8 +57,27 @@ header .overlay {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
+}
+
+.header-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    z-index: 2; /* Layer above image and overlay */
+    color: white; /* Ensure text is visible */
+    font-size: 3.8rem; /* Font size for main text */
+    font-weight: bold; /* Make the main text bold */
+    text-align: center; /* Center the text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Subtle shadow for readability */
+}
+
+.header-text .sub-text {
+    display: block; /* Ensure it's on a new line */
+    font-size: 2rem; /* Smaller font size for the second line */
+    font-weight: normal; /* Optional: lighter weight for contrast */
 }
 
 /* Hamburger Button */
@@ -143,22 +142,22 @@ header .overlay {
     }
 
     .nav-bar {
-        position: absolute; /* Change to absolute to overlay on header */
-        top: 0; /* Position at the top of the header */
-        left: 0;
+        position: absolute; /* Keep it overlaying on header */
+        top: 0; /* Align at the top of the header */
+        left: 0%;
         width: 100%; /* Full width across the header */
-        height: auto;
-        background-color: transparent; /* Keep the background transparent */
+        height: 6%;
+        background-color: rgba(0, 0, 0, 1); /* Add a dark translucent background */
         flex-direction: row; /* Arrange links horizontally */
         justify-content: center;
-        padding: 10px 0; /* Add some padding for spacing */
+        padding: 10px 0; /* Add padding for spacing */
         z-index: 2; /* Ensure it’s above the header overlay */
     }
 
     .nav-bar a {
         margin: 0 20px; /* Space between links */
         font-size: 20px;
-        color: white; /* Ensure text color contrasts with background */
+        color: white; /* Ensure text color contrasts with the background */
         text-decoration: none; /* Optional: Remove underline from links */
     }
 
