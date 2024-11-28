@@ -7,6 +7,10 @@ html {
     src: url('assets/fonts/CaviarDreams.ttf');
 }
 
+:root {
+    --hover-color: #ff8a36; /* Gold color */
+}
+
 /* Apply Caviar font to the entire body */
 body {
     font-family: 'Caviar', sans-serif;
@@ -36,7 +40,7 @@ a {
 
 /* Optional: Add hover effect to links */
 a:hover {
-    color: #ffae22; /* Change link color to gold when hovered */
+    color: var(--hover-color); /* Change link color to gold when hovered */
 }
 
 
@@ -110,7 +114,7 @@ header .overlay {
 }
 
 .menu-toggle:hover {
-    color: #ffa710; /* Match hover effect of nav-bar links */
+    color: var(--hover-color); /* Match hover effect of nav-bar links */
     transform: scale(1.1);
 }
 
@@ -150,7 +154,7 @@ header .overlay {
 }
 
 .nav-bar a:hover {
-    color: #FFD700; /* Hover effect for links */
+    color: var(--hover-color); /* Hover effect for links */
 }
 
 /* Header Text */
