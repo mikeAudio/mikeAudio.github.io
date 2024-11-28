@@ -265,6 +265,45 @@ header .overlay {
 /*=============================================================================================================================*/
 
 
+.slides-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .center-container {
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Hide overflow content */
+    padding-top: 20px; /* Add vertical padding */
+    padding-bottom: 20px; /* Add vertical padding */
+  }
+  
+  .image-container {
+    width: 320px;
+    height: 300px;
+    transform: translateX(-10px);
+  }
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 768px) {
+    .slides-container {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center-align items */
+    }
+  
+    .image-container {
+      width: 100%; /* Resize image container to fit the screen width */
+      max-width: 320px; /* Set maximum width for image container */
+      height: auto; /* Allow height to adjust according to aspect ratio */
+    }
+  }
+
+  
+
+/*=============================================================================================================================*/
+
+
 /* Contact Section*/
 a.mailto-link {
     color: lightgrey; /* Initial color */
