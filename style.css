@@ -165,8 +165,8 @@ header .overlay {
 
 
 
-/* Responsive Styling */
-@media (min-width: 950px) {
+/* Desktop Styling of nav bars*/
+@media (pointer: fine) {
     /* Desktop Layout */
     header img {
         height: 100%; /* Ensure full height */
@@ -244,7 +244,7 @@ header .overlay {
   }
 
   /* Mobile styles */
-  @media (max-width: 950px) {
+  @media (pointer: coarse) {
     .card-container {
       flex-direction: column; /* Stack cards vertically */
       gap: 20px; /* Adjust space between stacked cards */
@@ -286,7 +286,7 @@ header .overlay {
   }
   
   /* Media query for smaller screens */
-  @media screen and (max-width: 950px) {
+  @media screen and (pointer: coarse) {
     .slides-container {
       flex-direction: column; /* Stack items vertically */
       align-items: center; /* Center-align items */
