@@ -64,11 +64,12 @@
 
 
         <br><br><br>
-        <h1 id="gear">Referenzen</h1>
+        <h1 id="references">Referenzen</h1>
+        <br>
 
         <div class="artist-card-container">
 
-            <div class="artist-card" data-audio="assets/music/Beifang-Unbekannte Weite.mp3">
+            <div class="artist-card" data-audio="assets/music/Beifang - Unbekannte Weite.mp3">
                 <img src="assets/images/beifang.jpg" alt="Album Cover" class="artist-card-image">
                 <div class="artist-card-info">
                     <p class="interpret">Beifang - Vom.Ich.Über.Haben</p>
@@ -107,7 +108,7 @@
                 <button class="play-button">▶</button>
             </div>
 
-            <div class="artist-card" data-audio="assets/music/Inmage-Foad.mp3">
+            <div class="artist-card" data-audio="assets/music/Inmate - Foad.mp3">
                 <img src="assets/images/inmate.jpg" alt="Album Cover" class="artist-card-image">
                 <div class="artist-card-info">
                     <p class="interpret">Inmate - A Place I Belong</p>
@@ -155,31 +156,68 @@
 
     // Close the menu when a navigation link is clicked
     navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navBar.classList.remove('open');
+        link.addEventListener('click', () => {
+            navBar.classList.remove('open');
+        });
     });
 
-    ocument.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
     const artistCards = document.querySelectorAll('.artist-card');
+    let currentlyPlayingAudio = null; // Keep track of the currently playing audio
 
         artistCards.forEach(artistCard => {
             const playButton = artistCard.querySelector('.play-button');
             const audioSrc = artistCard.getAttribute('data-audio');
-            let audio = new Audio(audioSrc);
+            let audio = null; // Start without an audio object
+            let isPlaying = false; // Keep track of whether the audio is playing
+            let counter = 0;
 
             playButton.addEventListener('click', (e) => {
                 e.stopPropagation(); // Prevent artist-card hover behavior interference
-                if (audio.paused) {
-                    audio.play();
-                    playButton.textContent = '❚❚'; // Pause icon
-                } else {
-                    audio.pause();
-                    playButton.textContent = '▶'; // Play icon
+
+                // If audio hasn't been created yet, create it now
+                if (!audio) {
+                    audio = new Audio(audioSrc); // Create audio object on first play
+                    audio.preload = 'auto'; // Preload the audio to prevent delays on first play
+                    audio.onended = () => {
+                        playButton.textContent = '▶'; // Reset the button text to play when the song ends
+                        isPlaying = false;
+                        currentlyPlayingAudio = null; // Reset the currently playing audio
+                    };
                 }
+
+                // If another audio is currently playing, stop it
+                if (currentlyPlayingAudio && currentlyPlayingAudio !== audio) {
+                    currentlyPlayingAudio.pause(); // Stop the currently playing audio
+                    currentlyPlayingAudio.currentTime = 0; // Reset the time to the beginning
+                    currentlyPlayingAudio.playButton.textContent = '▶'; // Reset the play button on the previous card
+                    currentlyPlayingAudio.isPlaying = false; // Mark it as not playing
+                }
+
+                // Handle current audio
+                if (isPlaying) {
+                    audio.pause(); // Pause the audio
+                    console.log("Pause");
+                    playButton.textContent = '▶'; // Change button to play icon
+                    isPlaying = false;
+                } else {
+                    audio.play(); // Play the audio
+                    counter += 1;
+                    console.log("Play " + counter);
+                    playButton.textContent = '❚❚'; // Change button to pause icon
+                    isPlaying = true;
+                }
+
+                // Update the currentlyPlayingAudio reference and button
+                currentlyPlayingAudio = audio;
+                currentlyPlayingAudio.playButton = playButton;
+                currentlyPlayingAudio.isPlaying = isPlaying;
             });
         });
     });
-});
+
+
+
 </script>
 
 </script></body></html>
