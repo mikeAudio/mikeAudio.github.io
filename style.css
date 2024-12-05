@@ -264,8 +264,8 @@ header .overlay {
 
   /*=============================================================================================================================*/
 
-  /* Artist-card container */
-  .artist-card-container {
+/* Artist-card container */
+.artist-card-container {
     display: flex;
     flex-wrap: wrap; /* Allows cards to wrap onto a new line */
     justify-content: center; /* Centers the cards horizontally */
@@ -273,7 +273,6 @@ header .overlay {
     max-width: 1300px; /* Ensures only 4 cards fit per row with gaps */
     margin: 0 auto; /* Centers the container on the page */
 }
-
 
 /* Individual artist-card */
 .artist-card {
@@ -304,7 +303,7 @@ header .overlay {
 
 /* Style for the artist info container */
 .artist-card-info {
-    padding-top: 20px;
+    padding-top: 25px;
     font-size: 20px;
     line-height: 0.4; /* Adjust line spacing */
     text-align: left; /* Align text to the left */
@@ -320,17 +319,17 @@ header .overlay {
 
 /* Play button styling */
 .play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed; /* Position relative to the artist-card */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -110%); /* Offset to ensure it's perfectly centered */
+    background-color: rgba(255, 255, 255, 1);
     border: none;
     border-radius: 50%;
     width: 50px;
     height: 50px;
     font-size: 1.2rem;
-    display: none;
+    display: none; /* Hidden by default */
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -338,7 +337,7 @@ header .overlay {
 
 /* Show play button on hover */
 .artist-card:hover .play-button {
-    display: flex;
+    display: flex; /* Make the play button visible on hover */
 }
 
 
