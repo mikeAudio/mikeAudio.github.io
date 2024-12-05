@@ -207,13 +207,13 @@ header .overlay {
 
 
 /* Angebote Cards */
-.card-container {
+.angebote-card-container {
     display: flex;
     justify-content: center;
     gap: 2%; /* Adjust space between cards */
   }
   
-  .card {
+  .angebote-card {
     text-align: center;
     background-color: rgb(18, 18, 18);
     border-radius: 8px;
@@ -221,7 +221,7 @@ header .overlay {
     width: 400px; /* Adjust card width */
   }
   
-  .card img {
+  .angebote-card img {
     width: 100%;
     height: 460px; /* Adjust the height as needed for the desired cropping effect */
     object-fit: cover; /* Ensures the image is cropped to fit the specified height */
@@ -230,13 +230,13 @@ header .overlay {
     margin-bottom: 10px;
   }
   
-  .card h1 {
+  .angebote-card h1 {
     margin: 5px 0; /* Adjust spacing between text lines */
     font-size: 30px; /* Adjust text size */
     color: #ffffff;
   }
   
-  .card p {
+  .angebote-card p {
     padding-top: 7px;
     margin: 5px 0; /* Adjust spacing between text lines */
     font-size: 20px; /* Adjust text size */
@@ -245,21 +245,102 @@ header .overlay {
 
   /* Mobile styles */
   @media (pointer: coarse) {
-    .card-container {
+    .angebote-card-container {
       flex-direction: column; /* Stack cards vertically */
       gap: 20px; /* Adjust space between stacked cards */
     }
   
-    .card {
+    .angebote-card {
       width: 100%; /* Make cards take full width on mobile */
       max-width: 400px; /* Optional: Limit maximum width */
       margin: 0 auto; /* Center align cards */
     }
 
-    .card img {
+    .angebote-card img {
         height: 300px; 
       }
   }
+
+
+  /*=============================================================================================================================*/
+
+  /* Artist-card container */
+  .artist-card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap onto a new line */
+    justify-content: center; /* Centers the cards horizontally */
+    gap: 20px; /* Space between the cards */
+    max-width: 1300px; /* Ensures only 4 cards fit per row with gaps */
+    margin: 0 auto; /* Centers the container on the page */
+}
+
+
+/* Individual artist-card */
+.artist-card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    background-color: rgb(18, 18, 18);
+    border-radius: 10px;
+    padding: 15px;
+    transition: height 0.5s ease, transform 0.5s ease;
+    cursor: pointer;
+}
+
+/* Default size and hover state */
+.artist-card:hover {
+    transform: scale(1.05);
+    height: 405px;
+}
+
+/* Image styling */ 
+.artist-card-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    transition: none; /* No change on hover */
+}
+
+/* Style for the artist info container */
+.artist-card-info {
+    padding-top: 20px;
+    font-size: 20px;
+    line-height: 0.4; /* Adjust line spacing */
+    text-align: left; /* Align text to the left */
+    color: white; /* Default text color */
+}
+
+.artist-card-info .title {
+    font-size: 1.3rem; /* Smallest font size for links */
+    margin-top: 10px; /* Add spacing above this line */
+    line-height: 1.4; /* Slightly smaller line-height for compactness */
+    text-decoration: underline;
+}
+
+/* Play button styling */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Show play button on hover */
+.artist-card:hover .play-button {
+    display: flex;
+}
+
 
 
 /*=============================================================================================================================*/

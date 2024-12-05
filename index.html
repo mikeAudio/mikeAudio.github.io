@@ -32,13 +32,12 @@
             <a href="#contact">Kontakt</a>
         </nav>
 
-        <br><br><br>
 
+        <br><br><br>
         <h1 id="gear">Angebote</h1>
 
-  
-        <div class="card-container" id="gear">            
-            <div class="card">
+        <div class="angebote-card-container" id="gear">            
+            <div class="angebote-card">
             <img src="assets/images/photos/recording.jpg" alt="Recording Image">
             <h1>Recording</h1>
             <p>In unserem Recording Room haben wir Platz für bis zu 8 Musikern*innen, 
@@ -46,7 +45,7 @@
                 Mikrofonauswahl finden wir den richtigen Klang!</p>
 
             </div>
-            <div class="card">
+            <div class="angebote-card">
             <img src="assets/images/photos/mixing.jpg" alt="Mixing Image">
             <h1>Mixing</h1>
             <p>Von Singer-/Songwriter, über Punk und Blackmetal bis zu Jazz, Folk und Hip-Hop: 
@@ -54,7 +53,7 @@
                 die nicht in unserem Studio aufgenommen wurden.</p>
  
             </div>
-            <div class="card">
+            <div class="angebote-card">
             <img src="assets/images/photos/session.jpg" alt="Card 3 Image">
             <h1>Video Session</h1>
             <p>Wir können ebenfalls anbieten, HD-Videos von euren Songaufnahmen anzufertigen.
@@ -65,9 +64,65 @@
 
 
         <br><br><br>
+        <h1 id="gear">Referenzen</h1>
+
+        <div class="artist-card-container">
+
+            <div class="artist-card" data-audio="assets/music/Beifang-Unbekannte Weite.mp3">
+                <img src="assets/images/beifang.jpg" alt="Album Cover" class="artist-card-image">
+                <div class="artist-card-info">
+                    <p class="interpret">Beifang - Vom.Ich.Über.Haben</p>
+                    <p class="album">Song: Unbekannte Weite</p>
+                    <p class="title">
+                        <a href="https://open.spotify.com/album/0OBmcurWELtDaZPjfJjlyD" target="_blank" rel="noopener noreferrer">Spotify</a> | 
+                        <a href="https://www.instagram.com/beifang_kiel/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </p>
+                </div>
+                <button class="play-button">▶</button>
+            </div>
+
+            <div class="artist-card" data-audio="assets/music/Sebastian der Saubere - Chamäleonmann.mp3">
+                <img src="assets/images/sauber.jpg" alt="Album Cover" class="artist-card-image">
+                <div class="artist-card-info">
+                    <p class="interpret">Sebastian der Saubere - Sauber</p>
+                    <p class="album">Song: Chamäleonmann</p>
+                    <p class="title">
+                        <a href="https://open.spotify.com/album/3CPqQBYiKhrTa2EsHbWdHi" target="_blank" rel="noopener noreferrer">Spotify</a> | 
+                        <a href="https://www.instagram.com/sebastiandersaubere/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </p>
+                </div>
+                <button class="play-button">▶</button>
+            </div>
+
+            <div class="artist-card" data-audio="assets/music/Skinny Kurt - Pardon.mp3">
+                <img src="assets/images/skinny_kurt.jpg" alt="Album Cover" class="artist-card-image">
+                <div class="artist-card-info">
+                    <p class="interpret">Skinny Kurt - Pardon (Single)</p>
+                    <p class="album">Song: Pardon</p>
+                    <p class="title">
+                        <a href="https://open.spotify.com/album/1uZOMUN5PXMg4JSONuyAsG" target="_blank" rel="noopener noreferrer">Spotify</a> | 
+                        <a href="https://www.instagram.com/skinnykurt.official/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </p>
+                </div>
+                <button class="play-button">▶</button>
+            </div>
+
+            <div class="artist-card" data-audio="assets/music/Inmage-Foad.mp3">
+                <img src="assets/images/inmate.jpg" alt="Album Cover" class="artist-card-image">
+                <div class="artist-card-info">
+                    <p class="interpret">Inmate - A Place I Belong</p>
+                    <p class="album">Song: Foad</p>
+                    <p class="title">
+                        <a href="https://open.spotify.com/album/3WjhSd7Vty6DQsUxDVy9qS" target="_blank" rel="noopener noreferrer">Spotify</a>
+                    </p>
+                </div>
+                <button class="play-button">▶</button>
+            </div>
+
+        </div>
 
 
-
+        <br><br><br>
         <h1 id="contact">Kontakt</h1>
 
         <section class="contact-section">
@@ -96,12 +151,33 @@
     // Toggle the menu when the button is clicked
     menuToggle.addEventListener('click', () => {
     navBar.classList.toggle('open');
-});
+    });
 
     // Close the menu when a navigation link is clicked
     navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navBar.classList.remove('open');
+    });
+
+    ocument.addEventListener('DOMContentLoaded', () => {
+    const artistCards = document.querySelectorAll('.artist-card');
+
+        artistCards.forEach(artistCard => {
+            const playButton = artistCard.querySelector('.play-button');
+            const audioSrc = artistCard.getAttribute('data-audio');
+            let audio = new Audio(audioSrc);
+
+            playButton.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent artist-card hover behavior interference
+                if (audio.paused) {
+                    audio.play();
+                    playButton.textContent = '❚❚'; // Pause icon
+                } else {
+                    audio.pause();
+                    playButton.textContent = '▶'; // Play icon
+                }
+            });
+        });
     });
 });
 </script>
