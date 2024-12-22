@@ -66,6 +66,19 @@ header img {
     z-index: 0; /* Ensure it's behind the overlay and nav-bar */
 }
 
+@media (cursor: coarse) {
+    header img {
+        position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%; /* Force the image to fill the container's height */
+    object-fit: cover; /* Crop the sides to fill the container */
+    z-index: 0; /* Ensure it's behind the overlay and nav-bar */
+    }
+}
+
 header .overlay {
     position: absolute;
     top: 0;
@@ -103,8 +116,8 @@ header .overlay {
 .menu-toggle {
     position: fixed;
     top: 20px;
-    left: 20px;
-    font-size: 30px;
+    left: 40px;
+    font-size: 100px;
     background: none;
     border: none;
     color: white;
@@ -124,8 +137,8 @@ header .overlay {
 .nav-bar {
     position: fixed;
     top: 0;
-    left: -250px; /* Initially off-screen */
-    width: 250px;
+    left: -450px; /* Initially off-screen */
+    width: 450px;
     height: 100%;
     background-color: rgba(0, 0, 0, 1); /* Opaque background to cover all */
     display: flex;
@@ -144,10 +157,10 @@ header .overlay {
 /* Navigation Links */
 .nav-bar a {
     font-family: 'Caviar', sans-serif;
-    font-size: 30px;
+    font-size: 60px;
     color: white;
     text-decoration: none;
-    margin: 15px 0;
+    margin: 30px 0;
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: color 0.3s;
@@ -218,7 +231,7 @@ header .overlay {
     background-color: rgb(18, 18, 18);
     border-radius: 8px;
     padding: 20px;
-    width: 400px; /* Adjust card width */
+    width: 400px; 
   }
   
   .angebote-card img {
@@ -262,17 +275,54 @@ header .overlay {
   }
 
 
-  /*=============================================================================================================================*/
+/*=============================================================================================================================*/
 
-/* Artist-card container */
-.artist-card-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows cards to wrap onto a new line */
-    justify-content: center; /* Centers the cards horizontally */
-    gap: 20px; /* Space between the cards */
-    max-width: 1300px; /* Ensures only 4 cards fit per row with gaps */
-    margin: 0 auto; /* Centers the container on the page */
+/* Section for the background */
+.artist-section {
+    width: 100%; /* Full width of the page */
+    min-height: calc(100vh + 100px);; /* Full viewport height */
+    position: relative; /* For positioning the overlay */
+    background-image: url('assets/images/klavier.jpg'); /* Background image */
+    background-size: cover; /* Ensures the image covers the section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    display: flex; /* Aligns child elements */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    z-index: 0; /* Sets background layer */
+    overflow: hidden; /* Prevents overlay from spilling out */
 }
+
+/* The black overlay (lens effect) */
+.artist-section::before {
+    content: ''; /* Creates the overlay layer */
+    position: absolute; /* Position overlay to cover the background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Covers the entire section */
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 1) 0%, /* Solid black on the far left */
+        rgba(0, 0, 0, 0.5) 50%, /* Semi-transparent black in the center */
+        rgba(0, 0, 0, 1) 100% /* Solid black on the far right */
+    );
+    z-index: 1; /* Layer the overlay above the background */
+    pointer-events: none; /* Prevent interaction with the overlay */
+}
+
+/* The artist card container */
+.artist-card-container {
+    position: relative; /* Positioning context for adjusting Y-axis */
+    z-index: 2; /* Ensures it's above the overlay */
+    max-width: 1300px; /* Limit container width */
+    display: flex;
+    flex-wrap: wrap; /* Cards wrap to new lines */
+    justify-content: center; /* Center cards horizontally */
+    gap: 20px; /* Space between cards */
+    margin: 0 auto; /* Center container horizontally */
+}
+
 
 /* Individual artist-card */
 .artist-card {
@@ -283,14 +333,18 @@ header .overlay {
     background-color: rgb(18, 18, 18);
     border-radius: 10px;
     padding: 15px;
-    transition: height 0.5s ease, transform 0.5s ease;
+    transition: height 0.3s ease, transform 0.3s ease;
     cursor: pointer;
 }
 
-/* Default size and hover state */
 .artist-card:hover {
     transform: scale(1.05);
     height: 405px;
+    transition-delay: 0s; /* No delay when expanding */
+}
+
+.artist-card {
+    transition-delay: 0.25s; /* 300ms hold time before shrinking */
 }
 
 /* Image styling */ 
@@ -303,7 +357,7 @@ header .overlay {
 
 /* Style for the artist info container */
 .artist-card-info {
-    padding-top: 25px;
+    padding-top: 20px;
     font-size: 20px;
     line-height: 0.4; /* Adjust line spacing */
     text-align: left; /* Align text to the left */
@@ -312,7 +366,7 @@ header .overlay {
 
 .artist-card-info .title {
     font-size: 1.3rem; /* Smallest font size for links */
-    margin-top: 10px; /* Add spacing above this line */
+    margin-top: 7px; /* Add spacing above this line */
     line-height: 1.4; /* Slightly smaller line-height for compactness */
     text-decoration: underline;
 }
@@ -326,9 +380,9 @@ header .overlay {
     background-color: rgba(255, 255, 255, 1);
     border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
+    width: 80px;
+    height: 80px;
+    font-size: 1.8rem;
     display: none; /* Hidden by default */
     justify-content: center;
     align-items: center;
@@ -359,27 +413,54 @@ header .overlay {
     padding-bottom: 20px; /* Add vertical padding */
   }
   
-  .image-container {
-    width: 320px;
-    height: 300px;
-    transform: translateX(-10px);
+  .angebote-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
   }
   
-  /* Media query for smaller screens */
+  .angebote-card {
+    width: 320px; /* Default card width */
+    height: auto;
+    transform: translateX(-10px);
+    text-align: center;
+  }
+  
+  .angebote-card img {
+    width: 100%; /* Ensure the image fills the card */
+    height: auto;
+  }
+  
+  /* Media query for smaller screens (devices with coarse pointer, typically touch devices) */
   @media screen and (pointer: coarse) {
-    .slides-container {
+    .angebote-card-container {
       flex-direction: column; /* Stack items vertically */
       align-items: center; /* Center-align items */
     }
   
-    .image-container {
-      width: 100%; /* Resize image container to fit the screen width */
-      max-width: 320px; /* Set maximum width for image container */
-      height: auto; /* Allow height to adjust according to aspect ratio */
+    .angebote-card {
+      width: 95%; /* Make cards wider, set to 90% of the screen width */
+      max-width: 800px; /* Optionally, set a maximum width */
+      height: 1000px; /* Allow height to adjust according to aspect ratio */
+      padding: 50px;
+      transform: translateX(0); /* Remove any horizontal offset for better alignment */
+    }
+  
+    .angebote-card img {
+      height: 50%; 
+      width: 100%;
+    }
+
+    .angebote-card h1 {
+        padding-top: 1%;
+        font-size: 70px; /* Smaller font size for headings */
+    }
+
+    .angebote-card p {
+        font-size: 45px; /* Smaller font size for paragraphs */
     }
   }
-
-  
 
 /*=============================================================================================================================*/
 
