@@ -32,6 +32,12 @@ h1 {
     padding-bottom: 5px;
 }
 
+@media (cursor: coarse) {
+    h1{
+        font-size: 80px;
+    }
+}
+
 /* Remove the default link styling (blue color and underline) */
 a {
     color: white; /* Set link color to white */
@@ -66,19 +72,6 @@ header img {
     z-index: 0; /* Ensure it's behind the overlay and nav-bar */
 }
 
-@media (cursor: coarse) {
-    header img {
-        position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%; /* Force the image to fill the container's height */
-    object-fit: cover; /* Crop the sides to fill the container */
-    z-index: 0; /* Ensure it's behind the overlay and nav-bar */
-    }
-}
-
 header .overlay {
     position: absolute;
     top: 0;
@@ -106,6 +99,24 @@ header .overlay {
     display: block; /* Ensure it's on a new line */
     font-size: 2rem; /* Smaller font size for the second line */
     font-weight: normal; /* Optional: lighter weight for contrast */
+}
+
+@media (max-width: 768px) {
+
+    header img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 3%;
+        height: 100%; /* Force the image to fill the container's height */
+        object-fit: cover; /* Crop the sides to fill the container */
+        z-index: 0; /* Ensure it's behind the overlay and nav-bar */
+    }
+
+    .header-text{
+        font-size: 10rem;
+    }
 }
 
 
@@ -476,7 +487,7 @@ a.mailto-link:hover {
     filter: brightness(0.7); /* Darken the text on hover */
 }
 
-.contact-section
+.contact-section 
 {
     font-size: 30px;
     font-family: 'Caviar';
@@ -498,8 +509,6 @@ footer p, footer a {
 }
 
 p {
-    margin-top: 0px;
-    padding-top: 0px;
     text-align: center;
 }
 
