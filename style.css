@@ -295,7 +295,8 @@ header .overlay {
     background: transparent;
     color: white;
     border: none;
-    font-size: 18px;
+    font-family: 'Sans Serif';
+    font-size: 16px;
     cursor: pointer;
     transition: color 0.3s ease;
 }
