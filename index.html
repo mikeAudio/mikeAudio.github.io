@@ -234,6 +234,30 @@
     });
 
 
+    //Angebote on mobile:
+
+    const cards = document.querySelectorAll('.angebote-card');
+    const buttons = document.querySelectorAll('.sub-header button');
+
+    function setActiveCard(index) {
+        cards.forEach(card => card.classList.remove('active'));
+        buttons.forEach(button => button.classList.remove('active'));
+
+        cards[index].classList.add('active');
+        buttons[index].classList.add('active');
+    }
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const index = button.getAttribute('data-index'); 
+            setActiveCard(index); 
+        });
+    });
+
+    if (window.innerWidth <= 768) {
+        setActiveCard(0); 
+    }
+
 
 </script>
 
