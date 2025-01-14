@@ -440,7 +440,6 @@ header .overlay {
 
 /* Style for the artist info container */
 .artist-card-info {
-    padding-top: 20px;
     font-size: 20px;
     line-height: 0.4; /* Adjust line spacing */
     text-align: left; /* Align text to the left */
@@ -456,11 +455,11 @@ header .overlay {
 
 /* Play button styling */
 .play-button {
-    position: fixed; /* Position relative to the artist-card */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
+    position: absolute; /* Make it relative to the artist-card */
+    top: 50%; /* Center vertically within the card */
+    left: 50%; /* Center horizontally within the card */
     transform: translate(-50%, -110%); /* Offset to ensure it's perfectly centered */
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.7);
     border: none;
     border-radius: 50%;
     width: 80px;
@@ -469,7 +468,6 @@ header .overlay {
     display: none; /* Hidden by default */
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 }
 
 /* Show play button on hover */
@@ -486,7 +484,7 @@ header .overlay {
     .artist-card {
         width: 45vw;
         height: auto;
-        border-radius: 10px; /*round corners*/
+        border-radius: 10px; /* Round corners */
         padding: 4px;
     }
 
@@ -495,10 +493,31 @@ header .overlay {
         height: auto;
     }
 
-    .artist-card:hover .play-button {
-        display: block; /* Make the play button visible on hover */
+    .artist-card-info {
+        font-size: 15px;
+        line-height: 1.1; /* Adjust line spacing */
+    }
+
+    .artist-card-info .title {
+        font-size: 0.9rem; /* Smallest font size for links */
+        margin-top: 7px; /* Add spacing above this line */
+        line-height: 0.7; /* Slightly smaller line-height for compactness */
+        text-decoration: underline;
+    }
+
+    /* Always show play button on mobile */
+    .artist-card .play-button {
+        display: flex; 
+    }
+
+    .play-button {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+        transform: translate(-50%, -140%); /* Offset to ensure it's perfectly centered */
     }
 }
+
 
 
 
@@ -520,6 +539,14 @@ a.mailto-link:hover {
 {
     font-size: 30px;
     font-family: 'Caviar';
+}
+
+@media (max-width: 768px) {
+    .contact-section 
+    {
+        font-size: 20px;
+        line-height: 0.6;
+    }
 }
 
 footer {
