@@ -326,32 +326,33 @@ header .overlay {
     
     .angebote-card-container {
       flex-direction: column; /* Stack cards vertically */
-      gap: 17px !important; /* Adjust space between stacked cards */
+      gap: 17px; /* Adjust space between stacked cards */
     }
   
     .angebote-card {
-      width: 85vw !important;
-      height: auto !important;
-      padding: 15px !important;
+      width: 85vw;
+      height: auto;
+      padding: 15px;
       margin: 0 auto; /* Center align cards */
       transform: translateX(0); /* Remove any horizontal offset for better alignment */
     }
 
     .angebote-card img {
-        height: 30vh !important;
-        width: auto;
+        height: 30vh;
+        width: 100%;
     }
 
     .angebote-card h1 {
-        margin: 5px !important; /* Adjust spacing between text lines */
-        font-size: 30px !important;  /* Adjust text size */
+        padding-top: 0px;
+        margin: 5px; /* Adjust spacing between text lines */
+        font-size: 30px;  /* Adjust text size */
         color: #ffffff;
       }
 
     .angebote-card p {
         padding-top: 7px;
         margin: 5px 0; /* Adjust spacing between text lines */
-        font-size: 18px !important; /* Adjust text size */
+        font-size: 18px; /* Adjust text size */
         color: #ffffff;
       }
   }
