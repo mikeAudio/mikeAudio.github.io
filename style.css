@@ -366,11 +366,16 @@ header .overlay {
     }
   
     .angebote-card {
+      display: none;
       width: 85vw;
       height: auto;
       padding: 15px;
       margin: 0 auto; /* Center align cards */
       transform: translateX(0); /* Remove any horizontal offset for better alignment */
+    }
+
+    .angebote-card.active {
+        display: block;
     }
 
     .angebote-card img {
@@ -388,7 +393,7 @@ header .overlay {
     .angebote-card p {
         padding-top: 7px;
         margin: 5px 0; /* Adjust spacing between text lines */
-        font-size: 18px; /* Adjust text size */
+        font-size: 19px; /* Adjust text size */
         color: #ffffff;
       }
   }
