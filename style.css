@@ -414,7 +414,7 @@ header .overlay {
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
     z-index: 0; /* Sets background layer */
-    overflow: hidden; /* Prevents overlay from spilling out */
+    overflow: hidden; /* Prevents overlay from spilling out */  
 }
 
 /* The black overlay (lens effect) */
@@ -546,7 +546,11 @@ header .overlay {
         text-decoration: underline;
     }
 
-    /* Always show play button on mobile */
+    .artist-card:hover {
+        transform: scale(1);
+        height: auto;
+    }
+
     .artist-card .play-button {
         display: flex; 
     }
