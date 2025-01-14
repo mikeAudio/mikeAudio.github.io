@@ -326,29 +326,32 @@ header .overlay {
     
     .angebote-card-container {
       flex-direction: column; /* Stack cards vertically */
-      gap: 20px; /* Adjust space between stacked cards */
+      gap: 17px !important; /* Adjust space between stacked cards */
     }
   
     .angebote-card {
-      width: 200px !important;
+      width: 85vw !important;
       height: auto !important;
+      padding: 15px !important;
       margin: 0 auto; /* Center align cards */
+      transform: translateX(0); /* Remove any horizontal offset for better alignment */
     }
 
     .angebote-card img {
         height: 30vh !important;
+        width: auto;
     }
 
     .angebote-card h1 {
         margin: 5px !important; /* Adjust spacing between text lines */
-        font-size: 15px !important;  /* Adjust text size */
+        font-size: 30px !important;  /* Adjust text size */
         color: #ffffff;
       }
 
     .angebote-card p {
         padding-top: 7px;
         margin: 5px 0; /* Adjust spacing between text lines */
-        font-size: 10px !important; /* Adjust text size */
+        font-size: 18px !important; /* Adjust text size */
         color: #ffffff;
       }
   }
@@ -473,73 +476,30 @@ header .overlay {
     display: flex; /* Make the play button visible on hover */
 }
 
+@media (max-width: 768px) {
 
-
-/*=============================================================================================================================*/
-
-
-.slides-container {
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-  }
-  
-  .center-container {
-    text-align: center;
-    position: relative;
-    overflow: hidden; /* Hide overflow content */
-    padding-top: 20px; /* Add vertical padding */
-    padding-bottom: 20px; /* Add vertical padding */
-  }
-  
-  .angebote-card-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Space between cards */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  }
-  
-  .angebote-card {
-    width: 320px; /* Default card width */
-    height: auto;
-    transform: translateX(-10px);
-    text-align: center;
-  }
-  
-  .angebote-card img {
-    width: 100%; /* Ensure the image fills the card */
-    height: auto;
-  }
-  
-  /* Media query for smaller screens (devices with coarse pointer, typically touch devices) */
-  @media screen and (max-width: 768px) {
-    .angebote-card-container {
-      flex-direction: column; /* Stack items vertically */
-      align-items: center; /* Center-align items */
+    .artist-card-container {
+        gap: 6px; /* Space between cards */
     }
-  
-    .angebote-card {
-      width: 95%; /* Make cards wider, set to 90% of the screen width */
-      max-width: 800px; /* Optionally, set a maximum width */
-      height: 1000px; /* Allow height to adjust according to aspect ratio */
-      padding: 50px;
-      transform: translateX(0); /* Remove any horizontal offset for better alignment */
-    }
-  
-    .angebote-card img {
-      height: 50%; 
-      width: 100%;
+    
+    .artist-card {
+        width: 45vw;
+        height: auto;
+        border-radius: 10px; /*round corners*/
+        padding: 4px;
     }
 
-    .angebote-card h1 {
-        padding-top: 1%;
-        font-size: 70px; /* Smaller font size for headings */
+    .artist-card-image {
+        width: 45vw;
+        height: auto;
     }
 
-    .angebote-card p {
-        font-size: 45px; /* Smaller font size for paragraphs */
+    .artist-card:hover .play-button {
+        display: block; /* Make the play button visible on hover */
     }
-  }
+}
+
+
 
 /*=============================================================================================================================*/
 
