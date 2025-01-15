@@ -14,6 +14,7 @@ html {
 
 :root {
     --hover-color: #ff8a36;
+    --highlight-color: #171717;
 }
 
 body {
@@ -48,7 +49,6 @@ a {
     text-decoration: none; /* Remove underline */
 }
 
-/* Optional: Add hover effect to links */
 a:hover {
     color: var(--hover-color); /* Change link color to gold when hovered */
 }
@@ -60,7 +60,7 @@ a:hover {
 /* Other general styles for header and content */
 header {
     position: relative;
-        width: 100%;
+    width: 100%;
     height: 90vh;
     overflow: hidden;
 }
@@ -348,7 +348,7 @@ header .overlay {
   
   .angebote-card {
     text-align: center;
-    background-color: rgb(30, 30, 30);
+    background-color: var(--highlight-color);
     border-radius: 8px;
     padding: 20px;
     width: 380px; 
@@ -517,7 +517,7 @@ header .overlay {
 /* Play button styling */
 .play-button {
     position: absolute; /* Make it relative to the artist-card */
-    top: 50%; /* Center vertically within the card */
+    top: 50%; 
     left: 50%; /* Center horizontally within the card */
     transform: translate(-50%, -110%); /* Offset to ensure it's perfectly centered */
     background-color: rgba(255, 255, 255, 0.7);
@@ -585,6 +585,73 @@ header .overlay {
 
 
 
+/*=============================================================================================================================*/
+
+.gear-section{
+    display: flex;
+    justify-content: center;    
+}
+
+.gear-first-row{
+    display: flex; /* Enable flexbox for child alignment */
+    justify-content: space-between; /* Space out items within the row */
+    align-items: flex-start; /* Align items to the top */
+    width: 80vw;
+    height: auto;
+    background-color: var(--highlight-color);
+    padding: 50px; /* Optional: Add some padding */
+    border-radius: 30px;
+    gap: 20px; /* Optional: Add space between items */
+}
+
+.gear-first-row h1{
+    font-size: 30px;
+    text-align: left;
+}
+
+.gear-first-row p{
+    font-size: 20px;
+    line-height: 0.7;
+}
+
+.list-container {
+    display: flex; /* Flexbox layout for list and image */
+    align-items: flex-start; /* Align list and image to the top */
+    gap: 25px; /* Add space between the list and image */
+}
+
+.list-image {
+    position: relative;
+    height: 500px; /* Image will fit the height of the list */
+    border-radius: 30px;
+}
+
+.right-side {
+    display: flex;
+    align-items: right;
+    flex-direction: column; /* Stack the amp-list and instrument-list vertically */
+    gap: 30px; /* Space between lists */
+    flex: 1; /* Allow the list to take up as much space as needed */
+}
+
+.microphone-list {
+    flex: 1; /* Allow the list to take up as much space as needed */
+    align-self: flex-start; /* Align to the top of the container */
+    text-align: right;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #111111;
+    border-radius: 30px;
+}
+
+.amp-list, .instrument-list {
+    text-align: right;
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #111111;
+    border-radius: 30px;
+}
 
 /*=============================================================================================================================*/
 
@@ -604,6 +671,7 @@ a.mailto-link:hover {
 {
     font-size: 30px;
     font-family: 'Caviar';
+    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -619,17 +687,13 @@ footer {
     width: auto;
     margin: auto;
     font-family: 'Lemon', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: normal;
-    font-size: 200px;    
+    text-align: center;
     letter-spacing: 4px;
-    text-transform: uppercase;    
+    text-transform: uppercase;
 }
 
 footer p, footer a {
     font-size: 12px;
 }
 
-p {
-    text-align: center;
-}
 
