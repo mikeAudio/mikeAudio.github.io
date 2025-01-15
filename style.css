@@ -617,38 +617,53 @@ header .overlay {
 .list-container {
     display: flex; /* Flexbox layout for list and image */
     align-items: flex-start; /* Align list and image to the top */
+    align-self: center;
     gap: 25px; /* Add space between the list and image */
 }
 
-.list-image {
-    position: relative;
+.left-list-image {
     height: 500px; /* Image will fit the height of the list */
     border-radius: 30px;
-}
-
-.right-side {
-    display: flex;
-    align-items: right;
-    flex-direction: column; /* Stack the amp-list and instrument-list vertically */
-    gap: 30px; /* Space between lists */
-    flex: 1; /* Allow the list to take up as much space as needed */
 }
 
 .microphone-list {
     flex: 1; /* Allow the list to take up as much space as needed */
     align-self: flex-start; /* Align to the top of the container */
     text-align: right;
+    height: 500px;
     padding-left: 30px;
     padding-right: 30px;
     background-color: #111111;
     border-radius: 30px;
+}   
+
+.right-side {
+    display: flex;
+    align-items: right;
+    flex-direction: column; /* Stack the amp-list and instrument-list vertically */
+    gap: 25px; /* Space between lists */
+    flex: 1; /* Allow the list to take up as much space as needed */
+}
+
+.righttop-list-image {
+    height: 190px; /* Image will fit the height of the list */
+    width: 250px;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+.rightbot-list-image {
+    height: 290px; /* Image will fit the height of the list */
+    width: 250px;
+    border-radius: 30px;
+    object-fit: cover;
 }
 
 .amp-list, .instrument-list {
     text-align: right;
     display: block;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     background-color: #111111;
     border-radius: 30px;
 }
