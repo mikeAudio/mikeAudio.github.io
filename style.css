@@ -95,7 +95,7 @@ header .overlay {
     transform: translate(-50%, -50%); /* Perfect centering */
     z-index: 2; /* Layer above image and overlay */
     color: white; /* Ensure text is visible */
-    font-size: 3.8rem; /* Font size for main text */
+    font-size: 3.7rem; /* Font size for main text */
     font-weight: bold; /* Make the main text bold */
     text-align: center; /* Center the text */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Subtle shadow for readability */
