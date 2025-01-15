@@ -343,7 +343,7 @@ header .overlay {
 .angebote-card-container {
     display: flex;
     justify-content: center;
-    gap: 2%; /* Adjust space between cards */
+    gap: 1%; /* Adjust space between cards */
   }
   
   .angebote-card {
@@ -351,12 +351,13 @@ header .overlay {
     background-color: rgb(30, 30, 30);
     border-radius: 8px;
     padding: 20px;
-    width: 400px; 
+    width: 380px; 
+    height: auto;
   }
   
   .angebote-card img {
     width: 100%;
-    height: 460px; /* Adjust the height as needed for the desired cropping effect */
+    height: 45vh; /* Adjust the height as needed for the desired cropping effect */
     object-fit: cover; /* Ensures the image is cropped to fit the specified height */
     object-position: center; /* Centers the image within the cropped area */
     border-radius: 4px;
@@ -372,7 +373,7 @@ header .overlay {
   .angebote-card p {
     padding-top: 7px;
     margin: 5px 0; /* Adjust spacing between text lines */
-    font-size: 20px; /* Adjust text size */
+    font-size: 22px; /* Adjust text size */
     color: #ffffff;
   }
 
