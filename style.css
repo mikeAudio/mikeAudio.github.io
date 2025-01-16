@@ -14,7 +14,8 @@ html {
 
 :root {
     --hover-color: #ff8a36;
-    --highlight-color: #171717;
+    --highlight-color: #181818;
+    --highlight-accent: #111111;
 }
 
 body {
@@ -589,83 +590,82 @@ header .overlay {
 
 .gear-section{
     display: flex;
-    justify-content: center;    
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
 }
 
-.gear-first-row{
-    display: flex; /* Enable flexbox for child alignment */
-    justify-content: space-between; /* Space out items within the row */
-    align-items: flex-start; /* Align items to the top */
-    width: 80vw;
-    height: auto;
+.grid-table {
+    display: grid;
+    grid-template-areas: 
+        "cell1 cell1 cell1 cell1 cell1 cell2 cell2 cell2 cell2"
+        "cell1 cell1 cell1 cell1 cell1 cell2 cell2 cell2 cell2"
+        "cell1 cell1 cell1 cell1 cell1 cell3 cell3 cell3 cell3"
+        "cell1 cell1 cell1 cell1 cell1 cell3 cell3 cell3 cell3"
+        "cell1 cell1 cell1 cell1 cell1 cell3 cell3 cell3 cell3";
+    grid-template-columns: repeat(9, 8.5vw);
+    grid-template-rows: repeat(5, 130px);
     background-color: var(--highlight-color);
-    padding: 50px; /* Optional: Add some padding */
     border-radius: 30px;
-    gap: 20px; /* Optional: Add space between items */
+    padding: 50px;
 }
 
-.gear-first-row h1{
-    font-size: 30px;
-    text-align: left;
-}
+#cell1 { grid-area: cell1; }
+#cell2 { grid-area: cell2; }
+#cell3 { grid-area: cell3; }
 
-.gear-first-row p{
-    font-size: 20px;
-    line-height: 0.7;
-}
 
-.list-container {
-    display: flex; /* Flexbox layout for list and image */
-    align-items: flex-start; /* Align list and image to the top */
-    align-self: center;
-    gap: 25px; /* Add space between the list and image */
-}
-
-.left-list-image {
-    height: 500px; /* Image will fit the height of the list */
-    border-radius: 30px;
-}
-
-.microphone-list {
-    flex: 1; /* Allow the list to take up as much space as needed */
-    align-self: flex-start; /* Align to the top of the container */
-    text-align: right;
-    height: 500px;
-    padding-left: 30px;
-    padding-right: 30px;
-    background-color: #111111;
-    border-radius: 30px;
-}   
-
-.right-side {
+.grid-cell {
     display: flex;
-    align-items: right;
-    flex-direction: column; /* Stack the amp-list and instrument-list vertically */
-    gap: 25px; /* Space between lists */
-    flex: 1; /* Allow the list to take up as much space as needed */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: blue;
+    color: white;
+    font-size: 24px;
+    background-color: rgba(0, 212, 232, 0);
+    border-radius: 30px;
 }
 
-.righttop-list-image {
-    height: 190px; /* Image will fit the height of the list */
-    width: 250px;
+.gear-image{
+    width: 50%;
+    height: 94%;
+    margin: 10px;
     border-radius: 30px;
     object-fit: cover;
 }
 
-.rightbot-list-image {
-    height: 290px; /* Image will fit the height of the list */
-    width: 250px;
+.gear-list{
+    width: 50%;
+    height: 94%;
+    margin: 10px;
     border-radius: 30px;
-    object-fit: cover;
+    background-color: var(--highlight-accent);
 }
 
-.amp-list, .instrument-list {
+.gear-list p{
     text-align: right;
-    display: block;
-    padding-left: 10px;
+    font-size: 17px;
     padding-right: 10px;
-    background-color: #111111;
-    border-radius: 30px;
+    padding-left: 10px;
+}
+
+.gear-list h1{
+    text-align: left;
+    font-size: 22px;
+    padding-left: 15px;
+}
+
+.gear-list h2{
+    text-align: left;
+    padding-top: 15px;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.inst-list p{
+    text-align: left;
+    font-size: 17px;
 }
 
 /*=============================================================================================================================*/
