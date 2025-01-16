@@ -600,9 +600,14 @@ header .overlay {
         "cell1 cell1 cell1 cell1 cell1 cell2 cell2 cell2 cell2"
         "cell1 cell1 cell1 cell1 cell1 cell3 cell3 cell3 cell3"
         "cell1 cell1 cell1 cell1 cell1 cell3 cell3 cell3 cell3"
-        "cell1 cell1 cell1 cell1 cell1 cell3 cell3 cell3 cell3";
+        "cell1 cell1 cell1 cell1 cell1 cell3 cell3 cell3 cell3"
+        "cell4 cell4 cell4 cell4 cell4 cell4 cell4 cell4 cell4"
+        "cell4 cell4 cell4 cell4 cell4 cell4 cell4 cell4 cell4"
+        "cell4 cell4 cell4 cell4 cell4 cell4 cell4 cell4 cell4"
+        "cell5 cell5 cell5 cell5 cell5 cell6 cell6 cell6 cell6"
+        "cell5 cell5 cell5 cell5 cell5 cell6 cell6 cell6 cell6";
     grid-template-columns: repeat(9, 8.5vw);
-    grid-template-rows: repeat(5, 130px);
+    grid-template-rows: repeat(10, 130px);
     background-color: var(--highlight-color);
     border-radius: 30px;
     padding: 20px;
@@ -611,6 +616,9 @@ header .overlay {
 #cell1 { grid-area: cell1; }
 #cell2 { grid-area: cell2; }
 #cell3 { grid-area: cell3; }
+#cell4 { grid-area: cell4; }
+#cell5 { grid-area: cell5; }
+#cell6 { grid-area: cell6; }
 
 
 .grid-cell {
@@ -630,6 +638,8 @@ header .overlay {
     border-radius: 30px;
     object-fit: cover;
 }
+
+/* Lists general */
 
 .gear-list{
     width: 50%;
@@ -652,6 +662,7 @@ header .overlay {
     font-size: 24px;
     font-weight: bold;
     padding-left: 19px;
+    text-shadow: 2px 2px 2px var(--hover-color);
 }
 
 .gear-list h2{
@@ -662,15 +673,41 @@ header .overlay {
     padding-left: 12px;
 }
 
+/* Lists individually */
+
 .inst-list p{
     text-align: left;
-    font-size: 19px;
+    font-size: 23px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .inst-list h1{
     text-align: left;
     font-size: 24px;
     padding-left: 10px;
+}
+
+#cell4 .gear-list{
+    width: 40%;
+}
+
+#cell4 .gear-image{
+    width: 60%;
+}
+
+.software-list p{
+    text-align: right;
+    font-size: 20px;
+    line-height: 0.4;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.software-list h1{
+    text-align: left;
+    font-size: 28px;
+    padding-left: 19px;
 }
 
 /*=============================================================================================================================*/
