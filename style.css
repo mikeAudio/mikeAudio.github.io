@@ -21,11 +21,11 @@ html {
 body {
     font-family: 'Caviar', sans-serif;
     color: white;
-    background-image: url(../images/background.jpg);
+    background-image: url('assets/images/photos/footer.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: bottom center;
+    background-size: 100%;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -591,6 +591,7 @@ header .overlay {
 .gear-section{
     display: flex;
     justify-content: center;
+    padding-bottom: 150px;
 }
 
 .grid-table {
@@ -668,7 +669,7 @@ header .overlay {
 .gear-list h2{
     text-align: left;
     font-size: 21px;
-
+    color: var(--hover-color);
     padding-top: 15px;
     padding-left: 12px;
 }
@@ -717,7 +718,9 @@ header .overlay {
 a.mailto-link {
     color: lightgrey; /* Initial color */
     transition: filter 0.5s ease; /* Smooth transition */
-    text-decoration: none; /* Optional: Remove underline */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    text-shadow: 1px 1px 1px var(--hover-color);
 }
 
 a.mailto-link:hover {
@@ -729,6 +732,7 @@ a.mailto-link:hover {
     font-size: 30px;
     font-family: 'Caviar';
     text-align: center;
+    line-height: 0.3;
 }
 
 @media (max-width: 768px) {
