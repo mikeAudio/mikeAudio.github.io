@@ -712,6 +712,55 @@ header .overlay {
     padding-left: 19px;
 }
 
+/*============= Grid on mobile =========================*/
+
+@media (max-width: 768px) {
+    .grid-table {
+        grid-template-areas: 
+            "cell1"
+            "cell2"
+            "cell3"
+            "cell4"
+            "cell5"
+            "cell6";
+        grid-template-columns: repeat(1, 85vw);
+        grid-template-rows: repeat(6, auto);
+        padding: 4px;
+    }
+
+    .grid-cell {
+        overflow: hidden;
+        color: white;
+        background-color: rgba(0, 212, 232, 0);
+        border-radius: 30px;
+    }
+
+    .gear-image{
+        display: none;
+    }
+
+    .gear-list{
+        width: 100%;
+        height: auto;
+        padding-bottom: 10px;
+        background-color: var(--highlight-accent);
+        line-height: 0.8;
+    }
+
+    .gear-list p{
+        margin: 5px;
+    }
+
+
+    #cell4 .gear-list{
+        width: 100%;
+    }
+
+    .software-list p{
+        line-height: 1.0;
+    }
+}
+
 /*=============================================================================================================================*/
 
 
