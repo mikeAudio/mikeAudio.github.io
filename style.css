@@ -793,6 +793,26 @@ header .overlay {
 
 
 /* Contact Section*/
+
+.contact-section 
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    font-family: 'Caviar';
+    text-align: center;
+}
+
+.contact-section p{
+    margin: 2px;
+}
+
+.google-maps-link{
+    padding-top: 20px;
+    width: 100px;
+    height: 90px;
+}
+
 a.mailto-link {
     color: lightgrey; /* Initial color */
     transition: filter 0.5s ease; /* Smooth transition */
@@ -805,14 +825,6 @@ a.mailto-link:hover {
     filter: brightness(0.7); /* Darken the text on hover */
 }
 
-.contact-section 
-{
-    font-size: 30px;
-    font-family: 'Caviar';
-    text-align: center;
-    line-height: 0.3;
-}
-
 @media (max-width: 768px) {
     .contact-section 
     {
@@ -822,7 +834,7 @@ a.mailto-link:hover {
 }
 
 footer {
-    padding-top: 210px;
+    padding-top: 150px;
     width: auto;
     margin: auto;
     font-family: 'Lemon', Tahoma, Geneva, Verdana, sans-serif;
