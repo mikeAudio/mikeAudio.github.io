@@ -726,7 +726,7 @@ header .overlay {
         grid-template-columns: repeat(1, 90vw);
         grid-template-rows: repeat(6, auto);
         padding: 7px;
-        background-color: var(--highlight-color);
+        background-color: black;/*rgba(255, 128, 0, 0.601);*/
         border-radius: 24px;
     }
 
@@ -775,7 +775,13 @@ header .overlay {
     .gear-list p{
         margin: 7px;
         text-align: left;
-        text-shadow: 0px 0px 1px white;
+        text-shadow: 1px 1px 1px black;
+    }
+
+    .gear-list h1{
+        font-size: 35px;
+        margin-top: 5px;
+        margin-bottom: 10px;
     }
 
 
@@ -784,7 +790,7 @@ header .overlay {
     }
 
     .software-list p{
-        line-height: 1.0;
+        line-height: 0.8;
     }
 
 }
