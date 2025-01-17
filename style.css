@@ -289,7 +289,7 @@ header .overlay {
 /* Angebote Sub-header for mobile navigation */
 .sub-header {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 15px; /* Reduce gap to prevent breaking */
     margin: 3.5vw; /* Adjust margins for better spacing */
     padding: 5px 5px; /* Reduce padding to prevent overflow */
