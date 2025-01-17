@@ -290,7 +290,6 @@ header .overlay {
 .sub-header {
     display: flex;
     justify-content: space-evenly;
-    gap: 15px; /* Reduce gap to prevent breaking */
     margin: 3.5vw; /* Adjust margins for better spacing */
     padding: 5px 5px; /* Reduce padding to prevent overflow */
     background: rgb(30, 30, 30);
@@ -304,7 +303,7 @@ header .overlay {
     border: none;
     color: white;
     font-family: 'Sans Serif';
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     position: relative;
     padding: 5px 10px; /* Add padding for better hit area */
@@ -541,30 +540,38 @@ header .overlay {
 @media (max-width: 768px) {
 
     .artist-card-container {
+        display: flex;
         gap: 6px; /* Space between cards */
     }
     
     .artist-card {
         width: 45vw;
         height: auto;
-        border-radius: 10px; /* Round corners */
+        border-radius: 10px; 
         padding: 4px;
     }
 
     .artist-card-image {
-        width: 45vw;
+        width: 98%;
         height: auto;
+        margin: 2px;
+        border-radius: 4px;
     }
 
     .artist-card-info {
-        font-size: 15px;
-        line-height: 1.1; /* Adjust line spacing */
+        font-size: 17px;
+        line-height: 1.0; 
+        text-align: center; 
+    }
+    
+    .artist-card-info p{
+        margin: 9px;
     }
 
     .artist-card-info .title {
-        font-size: 0.9rem; /* Smallest font size for links */
-        margin-top: 7px; /* Add spacing above this line */
-        line-height: 0.7; /* Slightly smaller line-height for compactness */
+        font-size: 1.1rem; 
+        margin-top: 7px; 
+        line-height: 0.7; 
         text-decoration: underline;
     }
 
@@ -581,7 +588,7 @@ header .overlay {
         width: 45px;
         height: 45px;
         font-size: 1.1rem;
-        transform: translate(-50%, -140%); /* Offset to ensure it's perfectly centered */
+        transform: translate(-50%, -180%); /* Offset to ensure it's perfectly centered */
     }
 }
 
@@ -835,7 +842,7 @@ a.mailto-link:hover {
     .contact-section 
     {
         font-size: 20px;
-        line-height: 0.6;
+        line-height: 0.9;
     }
 }
 
