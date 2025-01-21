@@ -828,14 +828,14 @@ header .overlay {
 
 a.mailto-link {
     color: lightgrey; /* Initial color */
-    transition: filter 0.5s ease; /* Smooth transition */
+    transition: color 0.3s ease; /* Smooth transition */
     text-decoration: none; /* Remove underline */
     font-weight: bold;
     text-shadow: 1px 1px 1px var(--hover-color);
 }
 
 a.mailto-link:hover {
-    filter: brightness(0.7); /* Darken the text on hover */
+    color: var(--hover-color); /* Darken the text on hover */
 }
 
 @media (max-width: 768px) {
