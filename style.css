@@ -613,8 +613,8 @@ header .overlay {
         "cell4 cell4 cell4 cell4 cell4 cell4 cell4 cell4 cell4"
         "cell4 cell4 cell4 cell4 cell4 cell4 cell4 cell4 cell4"
         "cell4 cell4 cell4 cell4 cell4 cell4 cell4 cell4 cell4"
-        "cell5 cell5 cell5 cell5 cell5 cell6 cell6 cell6 cell6"
-        "cell5 cell5 cell5 cell5 cell5 cell6 cell6 cell6 cell6";
+        "cell5 cell5 cell5 cell5 cell6 cell6 cell6 cell6 cell6"
+        "cell5 cell5 cell5 cell5 cell6 cell6 cell6 cell6 cell6";
     grid-template-columns: repeat(9, 8.5vw);
     grid-template-rows: repeat(10, 130px);
     background-color: var(--highlight-color);
